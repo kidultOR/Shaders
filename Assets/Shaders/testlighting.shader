@@ -5,7 +5,7 @@
         _Color ("Color", Color) = (1,1,1,1)
         _Specular ("Specular", Range(0,1)) = 0.5
         _Gloss ("Gloss", Range(0.001,1)) = 0.5
-        _SpecularColor ("Specular Color", Color) = (1,1,1,1)
+        // _SpecularColor ("Specular Color", Color) = (1,1,1,1)
 
         _Normal ("Normal", 2D) = "bump"{}
         _NormalValue("Normal Value", Range(0,1)) = 1
