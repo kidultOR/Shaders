@@ -3,12 +3,12 @@
     Properties
     {
         _Color ("Color", Color) = (1,1,1,1)
-        _Specular ("Specular", Range(0,1)) = 0.5
-        _Gloss ("Gloss", Range(0.001,1)) = 0.5
-        // _SpecularColor ("Specular Color", Color) = (1,1,1,1)
+        _MetSmMap ("Metalic / Smoothness ", 2D) = "gray"{}
+        _NormalMap ("Normal", 2D) = "bump"{}
 
-        _Normal ("Normal", 2D) = "bump"{}
-        _NormalValue("Normal Value", Range(0,1)) = 1
+        // _RimPower ("Rim Power", Range(0,10)) = 1
+        _Metalic("Metalic", Range(0,1)) = 1 
+        _Smooth("Smoothness", Range(0,1)) = 1 
     }
     SubShader
     {
@@ -25,10 +25,9 @@
             half diff = max (0, dot (s.Normal, lightDir));
 
             float nh = max (0, dot (s.Normal, h));
-            float spec = pow (nh , 300 * s.Gloss) * s.Specular;
+            float spec = pow (nh , s.Gloss) * s.Specular;
 
             half4 c;
-            // c.rgb = (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * spec) * atten;
             c.rgb = (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * spec ) * atten;
             c.a = s.Alpha;
             return c;
@@ -36,21 +35,26 @@
 
         struct Input
         {
-            float2 uv_Normal;
+            float2 uv_NormalMap;
+            half3 viewDir;
         };
 
         fixed4 _Color;
-        half _Specular;
-        fixed _Gloss;
-        sampler2D _Normal;
-        half _NormalValue;
+        sampler2D _MetSmMap;
+        sampler2D _NormalMap;
+
+        float _RimPower;
+        half _Metalic;
+        half _Smooth;
 
         void surf (Input IN, inout SurfaceOutput o)
         {
+            fixed4 MSmap = tex2D( _MetSmMap, IN.uv_NormalMap);
+            fixed rim = pow (dot(IN.viewDir, o.Normal), _RimPower );
             o.Albedo = _Color;
-            o.Specular = _Specular;
-            o.Gloss = _Gloss;
-            o.Normal = UnpackNormal(tex2D( _Normal, IN.uv_Normal));
+            o.Specular = _Smooth;
+            o.Gloss = _Smooth * 500;
+            o.Normal = UnpackNormal(tex2D( _NormalMap, IN.uv_NormalMap));
         }
         ENDCG
     }

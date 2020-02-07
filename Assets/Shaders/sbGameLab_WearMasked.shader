@@ -2,8 +2,8 @@ Shader "#sbGameLab/StylizedAvatar_WearMasked"
 {
     Properties{
         [Header(Maps)]
-        _MainMap ("Main Map ( Spec, Normal G, Gloss, Normal R )", 2D) = "gray"{}
-        _MaskMap ("Mask Map", 2D) = "black"{}
+        _MainMap ("Main Map ( Metalic, Normal G, Smoothness, Normal R )", 2D) = "gray"{}
+        _MaskMap ("Mask Map (Color 1, Color 2, Color 3)", 2D) = "black"{}
 
         [Header(Base)]
         _ColorBase("Color Base", Color) = (0.5,0.5,0.5,0.5)
