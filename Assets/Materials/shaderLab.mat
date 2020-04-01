@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: shaderLab
-  m_Shader: {fileID: 4800000, guid: 30bf5330f115246df9085cd5fbc48a26, type: 3}
+  m_Shader: {fileID: 4800000, guid: ab266c654af9cd04ba3bcffd9eab4e58, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -35,6 +35,22 @@ Material:
         m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 30, y: 30}
         m_Offset: {x: 0, y: 0}
+    - _DetailMapBase:
+        m_Texture: {fileID: 2800000, guid: d4b1bf4966daf4845b4ff566fc4e5fbb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMap_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMap_2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMap_3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DetailMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -48,11 +64,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7cfa6d1d988f6384ba2f2e8f714d1f4e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskMap:
+        m_Texture: {fileID: 2800000, guid: b0dbc747d05d84f4b997c91b22efb402, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -111,7 +131,15 @@ Material:
     - _DetailPow: 0
     - _DstBlend: 0
     - _Gloss: 0.07
+    - _GlossBase: 0.5
     - _GlossMapScale: 1
+    - _Gloss_1: 0.5
+    - _Gloss_2: 0.5
+    - _Gloss_3: 0.453
+    - _Gloss_B: 1
+    - _Gloss_Base: 0.01
+    - _Gloss_G: 0.217
+    - _Gloss_R: 0.044
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
@@ -120,19 +148,39 @@ Material:
     - _Parallax: 0.02
     - _Power: 6
     - _RimPow: 1.25
-    - _SSSValue: 0.225
+    - _SSSValue: 0.159
     - _Shininess: 0.482
     - _SmoothnessTextureChannel: 0
     - _Spec: 1.22
     - _Specular: 0.477
     - _SpecularHighlights: 1
+    - _SpecularValueBase: 0.5
+    - _Specular_1: 0.5
+    - _Specular_2: 0.667
+    - _Specular_3: 0.434
+    - _Specular_B: 1
+    - _Specular_Base: 0.069
+    - _Specular_G: 0.251
+    - _Specular_R: 0.166
     - _SrcBlend: 1
+    - _TileValueBase: 14
+    - _TileValue_1: 1
+    - _TileValue_2: 10
+    - _TileValue_3: 10
     - _UVSec: 0
     - _ZWrite: 1
     - _emValue: 1
     m_Colors:
     - _Color: {r: 0.7830189, g: 0.45799217, b: 0.41736382, a: 1}
     - _Color2: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+    - _ColorBase: {r: 0.3018868, g: 0.23700128, b: 0.20078321, a: 0.5}
+    - _Color_1: {r: 0.26205945, g: 0.3679245, b: 0.3276364, a: 0.5}
+    - _Color_2: {r: 0.3962264, g: 0.3544044, b: 0.31585974, a: 0.5}
+    - _Color_3: {r: 0.3679245, g: 0.37732857, b: 0.49056602, a: 0.5}
+    - _DetailColor1: {r: 1, g: 1, b: 1, a: 1}
+    - _DetailColor2: {r: 1, g: 1, b: 1, a: 1}
+    - _DetailColor3: {r: 1, g: 1, b: 1, a: 1}
+    - _DetailColorBase: {r: 0.3882353, g: 0.28674006, b: 0.23137255, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.4339623, g: 0, b: 0, a: 1}

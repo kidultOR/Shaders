@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Bear
-  m_Shader: {fileID: 4800000, guid: 162dfe5d0e40a4b5d8f7f9f54a67ace6, type: 3}
+  m_Shader: {fileID: 4800000, guid: 5b02b4bd954f0fc46bbc5f8784c8d904, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,44 +19,24 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _DetailMapBase:
-        m_Texture: {fileID: 2800000, guid: 961cafe132d63494faecb7c62cf9b741, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMap_1:
-        m_Texture: {fileID: 2800000, guid: e58d207f782f444a7a5432a5934b5070, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMap_2:
         m_Texture: {fileID: 2800000, guid: d4b1bf4966daf4845b4ff566fc4e5fbb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DetailMap_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMap_2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DetailMap_3:
-        m_Texture: {fileID: 2800000, guid: 6b1ea27344c924a1ab1a0a9cd6b02364, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainMap:
-        m_Texture: {fileID: 2800000, guid: aa5847c759f08fd45814125b5dd89ebf, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -67,59 +47,42 @@ Material:
         m_Texture: {fileID: 2800000, guid: b0dbc747d05d84f4b997c91b22efb402, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+    - _RampMap:
+        m_Texture: {fileID: 2800000, guid: 00142ab1b15f2eb4fb51cc2e3bff863d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
+    - _SSSMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BumpScale: 1
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossBase: 0.01
-    - _GlossMapScale: 1
+    - _Gloss: 0.34
+    - _Gloss_B: 0.5
+    - _Gloss_Base: 0.082
+    - _Gloss_G: 0.5
+    - _Gloss_R: 0.113
     - _Glossiness: 0.5
-    - _GlossyReflections: 1
     - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _SmoothnessTextureChannel: 0
-    - _SpecBase: 0.315
-    - _SpecColor: 0.07
-    - _SpecColorBase: 0.462
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _TileValueBase: 1
-    - _TileValue_1: 5
-    - _TileValue_2: 72
-    - _TileValue_3: 49
-    - _UVSec: 0
-    - _ZWrite: 1
-    - _temp: 0
+    - _Power: 10
+    - _SSSValue: 1
+    - _Spec: 0.32
+    - _Specular_B: 0.5
+    - _Specular_Base: 0.191
+    - _Specular_G: 0.5
+    - _Specular_R: 0.23
+    - _TileValueBase: 43
+    - _TileValue_1: 10
+    - _TileValue_2: 10
+    - _TileValue_3: 10
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorBase: {r: 0.4339623, g: 0.2555423, b: 0.19855823, a: 0.5}
-    - _Color_1: {r: 0, g: 0.97032166, b: 1, a: 0.5}
-    - _Color_2: {r: 0.5849056, g: 0.3947518, b: 0.32280168, a: 0.5}
-    - _Color_3: {r: 0, g: 0.5247073, b: 1, a: 0.5}
-    - _DetailColor1: {r: 0.6037736, g: 0.16803133, b: 0.16803133, a: 1}
-    - _DetailColor2: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+    - _Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+    - _ColorBase: {r: 0.4811321, g: 0.32453722, b: 0.32453722, a: 0.5}
+    - _Color_1: {r: 0.6320754, g: 0.032796368, b: 0.071817264, a: 0.5}
+    - _Color_2: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _Color_3: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _DetailColor1: {r: 1, g: 1, b: 1, a: 1}
+    - _DetailColor2: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor3: {r: 1, g: 1, b: 1, a: 1}
-    - _DetailColorBase: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 1, g: 0.5518868, b: 0.5518868, a: 1}
-    - _SpecColorBase: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor_Base: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularColor1: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularColor2: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularColor3: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularColorBase: {r: 1, g: 1, b: 1, a: 1}
+    - _DetailColorBase: {r: 0.6320754, g: 0.3190192, b: 0.3190192, a: 1}
+    - _SSSColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.6495615, g: 0.36445352, b: 0.735849, a: 1}
