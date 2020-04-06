@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: shaderLab
-  m_Shader: {fileID: 4800000, guid: ab266c654af9cd04ba3bcffd9eab4e58, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2d7d325a1e5d4d442a034e944e2a5612, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,6 +20,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base_DetailMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -71,8 +75,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MaskB_DetailMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskG_DetailMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MaskMap:
         m_Texture: {fileID: 2800000, guid: b0dbc747d05d84f4b997c91b22efb402, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskR_DetailMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -93,6 +109,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampMap:
+        m_Texture: {fileID: 2800000, guid: bd1532dfef9f25647a2cf8dc6166e1ce, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SSSMap:
@@ -125,6 +145,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Amount: 0
+    - _Base_Gloss: 0.5
+    - _Base_Specular: 0.5
+    - _Base_Tile: 10
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -142,6 +165,15 @@ Material:
     - _Gloss_R: 0.044
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _MaskB_Gloss: 0.5
+    - _MaskB_Specular: 0.5
+    - _MaskB_Tile: 10
+    - _MaskG_Gloss: 0.5
+    - _MaskG_Specular: 0.5
+    - _MaskG_Tile: 10
+    - _MaskR_Gloss: 0.5
+    - _MaskR_Specular: 0.5
+    - _MaskR_Tile: 10
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -171,7 +203,10 @@ Material:
     - _ZWrite: 1
     - _emValue: 1
     m_Colors:
-    - _Color: {r: 0.7830189, g: 0.45799217, b: 0.41736382, a: 1}
+    - _Base_Color_1: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _Base_Color_2: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _Base_Color_Detail: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
     - _Color2: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
     - _ColorBase: {r: 0.3018868, g: 0.23700128, b: 0.20078321, a: 0.5}
     - _Color_1: {r: 0.26205945, g: 0.3679245, b: 0.3276364, a: 0.5}
@@ -183,6 +218,15 @@ Material:
     - _DetailColorBase: {r: 0.3882353, g: 0.28674006, b: 0.23137255, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MaskB_Color_1: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _MaskB_Color_2: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _MaskB_Color_Detail: {r: 1, g: 1, b: 1, a: 1}
+    - _MaskG_Color_1: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _MaskG_Color_2: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _MaskG_Color_Detail: {r: 1, g: 1, b: 1, a: 1}
+    - _MaskR_Color_1: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _MaskR_Color_2: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _MaskR_Color_Detail: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.4339623, g: 0, b: 0, a: 1}
     - _SSSColor: {r: 0.8490566, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.70935476, g: 0.503916, b: 0.7169812, a: 1}

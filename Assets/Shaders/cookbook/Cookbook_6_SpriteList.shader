@@ -29,8 +29,8 @@
             // Вычислим, сколько занимает одна клетка 
             float cellUVPercentage = 1/_CellAmount;
             //Вычислим номер кадра для сдвига UV
-            float frame = fmod(_Time.y * _Speed, _CellAmount); 
-            frame = floor(frame);
+            float frame = fmod(_Time.y * _Speed, _CellAmount); // Получаем остаток от деление
+            frame = floor(frame); // Отбрасываем дробную часть ( мы получим номер текущего кадра в диапазоне от 0 до _CellAmount - 1)
             //Изменим UV в соответствии с текущим кадром
             float xValue = (spriteUV.x + frame) * cellUVPercentage; 
             spriteUV = float2(xValue, spriteUV.y);
