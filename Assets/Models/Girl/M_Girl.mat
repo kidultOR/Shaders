@@ -80,11 +80,11 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Gloss: 0.028
+    - _Gloss: 0.019
     - _GlossMapScale: 1
-    - _Glossiness: 0.737
+    - _Glossiness: 0.64
     - _GlossyReflections: 1
-    - _Metallic: 1
+    - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -92,15 +92,23 @@ Material:
     - _SSSValue: 1
     - _SmoothnessTextureChannel: 0
     - _Spec: 0.287
-    - _Specular: 1
+    - _Specular: 0.535
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.89411765, g: 0.64705884, b: 0.5686275, a: 1}
+    - _Color: {r: 0.3490566, g: 0.19054711, b: 0.16958883, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FaceColor: {r: 0.46339804, g: 0.011792451, b: 0.5, a: 1}
-    - _LipsColor: {r: 0.09433961, g: 0, b: 0, a: 1}
+    - _FaceColor: {r: 0.5363475, g: 0.19490923, b: 0.5660378, a: 1}
+    - _FaceColor0: {r: 1, g: 0.79959995, b: 0, a: 1}
+    - _FaceColor1: {r: 0.9725491, g: 0.8000001, b: 0.27450982, a: 1}
+    - _FaceColor2: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
+    - _FaceColor3: {r: 0.6509434, g: 0, b: 0.5307781, a: 1}
+    - _LipsColor: {r: 0.0983001, g: 0.16285118, b: 0.4433962, a: 1}
+    - _LipsColor0: {r: 1, g: 0.94259155, b: 0, a: 1}
+    - _LipsColor1: {r: 1, g: 0, b: 0.11348438, a: 1}
+    - _LipsColor2: {r: 0, g: 1, b: 0.18364692, a: 1}
+    - _LipsColor3: {r: 0, g: 0.28658247, b: 1, a: 1}
     - _SSSColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.5660378, g: 0.3568693, b: 0.22694911, a: 1}
+    - _SpecColor: {r: 0.69803923, g: 0.536257, b: 0.38039216, a: 1}

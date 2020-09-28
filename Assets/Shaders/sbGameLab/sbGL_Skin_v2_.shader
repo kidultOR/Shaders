@@ -7,15 +7,21 @@
         _MainMap ("Main Map (R=Metallic, G=Normal_G, B=Smoothness, A=Normal_R)", 2D) = "gray" {}
         _SpecColor("Specular Color", Color) = (1,1,1,1)
         _Specular ("Specular", Range(0,1)) = 0.0
-        _Gloss ("Smoothness", Range(0,1)) = 0.5 
+        _Gloss ("Gloss", Range(0.01,1)) = 0.5 
 
         [Header(Face)]
         _FaceMap ("Face Map", 2D) = "gray"{}
-        _FaceColor("Face. Color", Color) = (1,1,1,1)
+        _FaceColor0("Face. Color 0", Color) = (1,1,1,1)
+        _FaceColor1("Face. Color 1", Color) = (1,1,1,1)
+        _FaceColor2("Face. Color 2", Color) = (1,1,1,1)
+        _FaceColor3("Face. Color 3", Color) = (1,1,1,1)
         
         [Header(Lips)]
         _LipsMap ("Lips Map", 2D) = "black"{}
-        _LipsColor("Face. Color", Color) = (1,1,1,1)
+        _LipsColor0("Face. Color 0", Color) = (1,1,1,1)
+        _LipsColor1("Face. Color 1", Color) = (1,1,1,1)
+        _LipsColor2("Face. Color 2", Color) = (1,1,1,1)
+        _LipsColor3("Face. Color 3", Color) = (1,1,1,1)
     }
 
     SubShader{
@@ -32,8 +38,14 @@
         sampler2D _LipsMap;
 
         fixed3 _Color;
-        fixed3 _FaceColor;
-        fixed3 _LipsColor;
+        fixed3 _FaceColor0;
+        fixed3 _FaceColor1;
+        fixed3 _FaceColor2;
+        fixed3 _FaceColor3;
+        fixed3 _LipsColor0;
+        fixed3 _LipsColor1;
+        fixed3 _LipsColor2;
+        fixed3 _LipsColor3;
         half _Gloss;
         half _Specular;
 
@@ -48,9 +60,17 @@
         void surf (Input IN, inout SurfaceOutput o){
             fixed3 c = tex2D (_ColorMap, IN.uv_MainMap) * _Color;
             fixed4 fmap = tex2D(_FaceMap, IN.uv2_FaceMap);
+            fixed3 fc = _FaceColor0 *(1-fmap.r) + _FaceColor1*fmap.r;
+            fc =  fc *(1-fmap.g) + _FaceColor2*fmap.g;
+            fc = fc*(1-fmap.b) + _FaceColor3*fmap.b;
+
             fixed4 lmap = tex2D(_LipsMap, IN.uv3_LipsMap);
-            c = c * (1-fmap.a) + _FaceColor * fmap.a;
-            c = c * (1-lmap.a) + _LipsColor * lmap.a;
+            fixed3 lc = _LipsColor0*(1-lmap.r) + _LipsColor1*lmap.r;
+            lc = lc*(1-lmap.g) + _LipsColor2*lmap.g;
+            lc = lc*(1-lmap.b) + _LipsColor3*lmap.b;
+
+            c = c * (1-fmap.a) + fc * fmap.a;
+            c = c * (1-lmap.a) + lc * lmap.a;
             o.Albedo = c.rgb;
 
             //  Normal

@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseDetailMap:
-        m_Texture: {fileID: 2800000, guid: 6b1ea27344c924a1ab1a0a9cd6b02364, type: 3}
+        m_Texture: {fileID: 2800000, guid: dcf51c0bd2925489984b3de7681d51c7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -64,7 +64,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BaseDetailTile: 4.3
+    - _BaseDetailTile: 20.6
     - _Base_Gloss: 0.038
     - _Base_Rim_Value: 1
     - _Base_Specular: 0.172
