@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Girl
-  m_Shader: {fileID: 4800000, guid: b7bae8e452c462e49b0e739816d61f53, type: 3}
+  m_Shader: {fileID: 4800000, guid: 315cad8c79dbc4688b248235445bca30, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -43,6 +43,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FaceMap:
+        m_Texture: {fileID: 2800000, guid: d8eb393e2a4f2574f9ea9109425eac24, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LipsMap:
+        m_Texture: {fileID: 2800000, guid: 45e319d17afb3b2409f60e7edf742b22, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainMap:
         m_Texture: {fileID: 2800000, guid: 0fe8b3194c6cc53468129175ba03f753, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -72,9 +80,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Gloss: 0.052
+    - _Gloss: 0.028
     - _GlossMapScale: 1
-    - _Glossiness: 0.84
+    - _Glossiness: 0.737
     - _GlossyReflections: 1
     - _Metallic: 1
     - _Mode: 0
@@ -84,6 +92,7 @@ Material:
     - _SSSValue: 1
     - _SmoothnessTextureChannel: 0
     - _Spec: 0.287
+    - _Specular: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
@@ -91,5 +100,7 @@ Material:
     m_Colors:
     - _Color: {r: 0.89411765, g: 0.64705884, b: 0.5686275, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FaceColor: {r: 0.46339804, g: 0.011792451, b: 0.5, a: 1}
+    - _LipsColor: {r: 0.09433961, g: 0, b: 0, a: 1}
     - _SSSColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.686462, g: 0.4762816, b: 0.7264151, a: 1}
+    - _SpecColor: {r: 0.5660378, g: 0.3568693, b: 0.22694911, a: 1}
