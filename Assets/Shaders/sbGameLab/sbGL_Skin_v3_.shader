@@ -1,4 +1,4 @@
-﻿Shader "#sbGameLab/Skin_v2_Spec"
+﻿Shader "#sbGameLab/Skin_v3"
 {
     Properties{
         [Header(Base)]
@@ -9,23 +9,29 @@
         _Specular ("Specular", Range(0,1)) = 0.0
         _Gloss ("Gloss", Range(0.01,1)) = 0.5 
 
+        [Header(Body)]
+        _BodyMap ("Body Map", 2D) = "black"{}
+        _BodyColor("Body. Color", Color) = (1,1,1,1)
+        _BodySpecColor("Body. Specular Color", Color) = (1,1,1,1)
+        _BodyGloss("Body. Gloss", Range(0.01, 1))= 0.5
+
         [Header(Face)]
-        _FaceMap ("Face Map", 2D) = "Black"{}
-        _FaceColor0("Face. Color 0", Color) = (1,1,1,1)
-        _FaceColor1("Face. Color 1", Color) = (1,1,1,1)
-        _FaceColor2("Face. Color 2", Color) = (1,1,1,1)
-        _FaceColor3("Face. Color 3", Color) = (1,1,1,1)
+        _FaceMap ("Face Map", 2D) = "black"{}
+        _FaceColor("Face. Color", Color) = (1,1,1,1)
+        _FaceSpecColor("Face. Specular Color", Color) = (1,1,1,1)
+        _FaceGloss("Face. Gloss", Range(0.01, 1))= 0.5
 
         [Header(Eyes)]
-        _EyesMap ("Eyes Map", 2D) = "Black"{}
+        _EyesMap ("Eyes Map", 2D) = "black"{}
         _EyesColor("Eyes. Color ", Color) = (1,1,1,1)
+        _EyesSpecColor("Eyes. Specular Color", Color) = (1,1,1,1)
+        _EyesGloss("Eyes. Gloss", Range(0.01, 1))= 0.5
         
         [Header(Lips)]
         _LipsMap ("Lips Map", 2D) = "black"{}
-        _LipsColor0("Face. Color 0", Color) = (1,1,1,1)
-        _LipsColor1("Face. Color 1", Color) = (1,1,1,1)
-        _LipsColor2("Face. Color 2", Color) = (1,1,1,1)
-        _LipsColor3("Face. Color 3", Color) = (1,1,1,1)
+        _LipsColor("Face. Color", Color) = (1,1,1,1)
+        _LipsSpecColor("Lips. Specular Color", Color) = (1,1,1,1)
+        _LipsGloss("Lips. Gloss", Range(0.01, 1))= 0.5
     }
 
     SubShader{
@@ -38,42 +44,65 @@
 
         sampler2D _ColorMap;
         sampler2D _MainMap;
+        sampler2D _BodyMap;
         sampler2D _FaceMap;
+        sampler2D _EyesMap;
         sampler2D _LipsMap;
 
-        fixed3 _Color;
-        fixed3 _FaceColor0;
-        fixed3 _FaceColor1;
-        fixed3 _FaceColor2;
-        fixed3 _FaceColor3;
-        fixed3 _LipsColor0;
-        fixed3 _LipsColor1;
-        fixed3 _LipsColor2;
-        fixed3 _LipsColor3;
+        fixed4 _Color;
+        fixed4 _BodyColor;
+        fixed4 _FaceColor;
+        fixed4 _EyesColor;
+        fixed4 _LipsColor;
+
         half _Gloss;
         half _Specular;
+        half _BodyGloss;
+        half _FaceGloss;
+        half _EyesGloss;
+        half _LipsGloss;
+
+        
 
         struct Input{
             float2 uv_MainMap;
             float2 uv2_FaceMap;
-            float2 uv3_LipsMap;
+            float2 uv3_EyesMap;
+            float2 uv4_LipsMap;
             // float4 vertColor;
             float3 viewDir;
+            
         };
 
-        void surf (Input IN, inout SurfaceOutput o){
+        struct SurfaceOutputStr
+        {
+            fixed3 Albedo;
+            fixed3 Normal;
+            fixed3 Emission;
+            fixed3 Specular;
+            fixed Gloss;
+            fixed3 specColor;
+            fixed Alpha;
+        };
+
+        void surf (Input IN, inout SurfaceOutputStr o){
             fixed3 c = tex2D (_ColorMap, IN.uv_MainMap) * _Color;
+
+            fixed4 bmap = tex2D(_BodyMap, IN.uv_MainMap);
+            fixed3 bc = _BodyColor * bmap;
+
             fixed4 fmap = tex2D(_FaceMap, IN.uv2_FaceMap);
-            fixed3 fc = _FaceColor0 *(1-fmap.r) + _FaceColor1*fmap.r;
-            fc =  fc *(1-fmap.g) + _FaceColor2*fmap.g;
-            fc = fc*(1-fmap.b) + _FaceColor3*fmap.b;
+            fixed3 fc = _FaceColor * fmap;
 
-            fixed4 lmap = tex2D(_LipsMap, IN.uv3_LipsMap);
-            fixed3 lc = _LipsColor0*(1-lmap.r) + _LipsColor1*lmap.r;
-            lc = lc*(1-lmap.g) + _LipsColor2*lmap.g;
-            lc = lc*(1-lmap.b) + _LipsColor3*lmap.b;
+            fixed4 emap = tex2D(_EyesMap, IN.uv3_EyesMap);
+            fixed3 ec = _EyesColor * emap;
 
+            fixed4 lmap = tex2D(_LipsMap, IN.uv4_LipsMap);
+            fixed3 lc = _LipsColor * lmap;
+
+            c = c * (1-bmap.a) + bc * bmap.a;
             c = c * (1-fmap.a) + fc * fmap.a;
+            c = c * (1-emap.a) + ec * emap.a;
             c = c * (1-lmap.a) + lc * lmap.a;
             o.Albedo = c.rgb;
 
@@ -86,7 +115,7 @@
             o.Gloss = _Gloss;
         }
 
-        half4 LightingSimpleSpecular (SurfaceOutput s, half3 lightDir, half3 viewDir, half atten) {
+        half4 LightingSimpleSpecular (SurfaceOutputStr s, half3 lightDir, half3 viewDir, half atten) {
             half3 h = normalize (lightDir + viewDir);
 
             half diff = max (0, dot (s.Normal, lightDir));
