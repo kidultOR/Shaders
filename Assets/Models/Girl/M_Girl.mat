@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Girl
-  m_Shader: {fileID: 4800000, guid: 315cad8c79dbc4688b248235445bca30, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4daf90dd9d21c4a22a8c8a49936466e2, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BodyMap:
+        m_Texture: {fileID: 2800000, guid: 00a7bca962448cc4bb0e9199eb0784d0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -44,15 +48,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EyesMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 65af6834107f40043aa5514c950dba29, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FaceMap:
-        m_Texture: {fileID: 2800000, guid: d8eb393e2a4f2574f9ea9109425eac24, type: 3}
+        m_Texture: {fileID: 2800000, guid: 48d2e35db75d2c440bfb7ddf0ab53b7f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LipsMap:
-        m_Texture: {fileID: 2800000, guid: 45e319d17afb3b2409f60e7edf742b22, type: 3}
+        m_Texture: {fileID: 2800000, guid: ffe17fee85a654144bd441bc9ecaa535, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainMap:
@@ -80,14 +84,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _BodyGloss: 0.137
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EyesGloss: 0.097
+    - _FaceGloss: 0.211
     - _Gloss: 0.019
     - _GlossMapScale: 1
     - _Glossiness: 0.64
     - _GlossyReflections: 1
+    - _LipsGloss: 0.74
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -96,24 +104,29 @@ Material:
     - _SSSValue: 1
     - _SmoothnessTextureChannel: 0
     - _Spec: 0.287
-    - _Specular: 0.535
+    - _Specular: 0.546
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - _BodyColor: {r: 0.31295818, g: 0.30460128, b: 0.3490566, a: 1}
+    - _BodySpecColor: {r: 0.92915714, g: 0.6392157, b: 0.99215686, a: 0.23529412}
     - _Color: {r: 0.89411765, g: 0.64705884, b: 0.5686275, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EyesColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FaceColor: {r: 0.5363475, g: 0.19490923, b: 0.5660378, a: 1}
+    - _EyesColor: {r: 0.16002628, g: 0.14119795, b: 0.1792453, a: 1}
+    - _EyesSpecColor: {r: 0.7559761, g: 0.39551443, b: 0.8301887, a: 1}
+    - _FaceColor: {r: 0.54178405, g: 0.24959949, b: 0.6698113, a: 1}
     - _FaceColor0: {r: 0, g: 0.7882353, b: 0, a: 0}
     - _FaceColor1: {r: 0.9725491, g: 0.8000001, b: 0.27450982, a: 1}
     - _FaceColor2: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
     - _FaceColor3: {r: 0.6509434, g: 0, b: 0.5307781, a: 1}
-    - _LipsColor: {r: 0.0983001, g: 0.16285118, b: 0.4433962, a: 1}
+    - _FaceSpecColor: {r: 0.5471698, g: 0.35359558, b: 0.35359558, a: 1}
+    - _LipsColor: {r: 0.6698113, g: 0.26160955, b: 0.23696156, a: 1}
     - _LipsColor0: {r: 1, g: 0.94259155, b: 0, a: 1}
     - _LipsColor1: {r: 1, g: 0, b: 0.11348438, a: 1}
     - _LipsColor2: {r: 0, g: 1, b: 0.18364692, a: 1}
     - _LipsColor3: {r: 0, g: 0.28658247, b: 1, a: 1}
+    - _LipsSpecColor: {r: 0.9339623, g: 0.5594963, b: 0.5664308, a: 1}
     - _SSSColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.69803923, g: 0.536257, b: 0.38039216, a: 1}
+    - _SpecColor: {r: 0.69803923, g: 0.536257, b: 0.38039216, a: 0.5529412}

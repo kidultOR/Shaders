@@ -51,12 +51,15 @@
 
         fixed4 _Color;
         fixed4 _BodyColor;
+        fixed4 _BodySpecColor;
         fixed4 _FaceColor;
+        fixed4 _FaceSpecColor;
         fixed4 _EyesColor;
+        fixed4 _EyesSpecColor;
         fixed4 _LipsColor;
+        fixed4 _LipsSpecColor;
 
         half _Gloss;
-        half _Specular;
         half _BodyGloss;
         half _FaceGloss;
         half _EyesGloss;
@@ -81,7 +84,7 @@
             fixed3 Emission;
             fixed3 Specular;
             fixed Gloss;
-            fixed3 specColor;
+            fixed3 SpecColor;
             fixed Alpha;
         };
 
@@ -109,10 +112,20 @@
             //  Normal
             fixed4 main  = tex2D (_MainMap, IN.uv_MainMap);
             o.Normal = UnpackNormal(fixed4(main.a, main.g, 1, 1));
-            //  Specular
-            o.Specular = _Specular;
+            //  Specular Color
+            fixed4 specC = _SpecColor * (1-bmap.a) + _BodySpecColor * bmap.a;
+            specC = specC * (1-fmap.a) + _FaceSpecColor * fmap.a;
+            specC = specC * (1-emap.a) + _EyesSpecColor * emap.a;
+            specC = specC * (1-lmap.a) + _LipsSpecColor * lmap.a;
+            o.SpecColor = specC;
+            // o.Specular = _Specular;
+            o.Specular = specC.a;
             //  Gloss
-            o.Gloss = _Gloss;
+            half g = _Gloss * (1-bmap.a) + _BodyGloss * bmap.a;
+            g = g * (1-fmap.a) + _FaceGloss * fmap.a;
+            g = g * (1-emap.a) + _EyesGloss * emap.a;
+            g = g * (1-lmap.a) + _LipsGloss * lmap.a;
+            o.Gloss = g;
         }
 
         half4 LightingSimpleSpecular (SurfaceOutputStr s, half3 lightDir, half3 viewDir, half atten) {
@@ -122,7 +135,7 @@
 
             float nh = max (0, dot (s.Normal, h));
             float spec = pow (nh , 300 * s.Gloss) * s.Specular;
-            fixed3 specularColor = _SpecColor;
+            fixed3 specularColor = s.SpecColor;
  
             half4 c;
             c.rgb = (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * spec * specularColor) * atten;

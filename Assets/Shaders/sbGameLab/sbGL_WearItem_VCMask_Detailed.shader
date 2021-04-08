@@ -93,7 +93,7 @@ Shader "#sbGameLab/WearItem_VCMask_Detailed"
 
         struct Input{
             float2 uv_MainMap;
-            float2 uv_Base_DetailMap;
+            float2 uv2_Base_DetailMap;
             float4 vertColor;
         };
 
@@ -111,22 +111,22 @@ Shader "#sbGameLab/WearItem_VCMask_Detailed"
 
 
             // Albedo
-            float2 uv_dBase = uv_main * _Base_Tile;
+            float2 uv_dBase = IN.uv2_Base_DetailMap * _Base_Tile;
             fixed4 detailBase = tex2D(_Base_DetailMap, uv_dBase);
             fixed3 baseColor = (1-maps.r)*_Base_Color_1 + maps.r*_Base_Color_2;
             fixed3 base = baseColor * (1 - detailBase.a) + detailBase.a * _Base_Color_Detail * detailBase;
 
-            float2 uv_d1 = uv_main * _MaskR_Tile;
+            float2 uv_d1 = IN.uv2_Base_DetailMap * _MaskR_Tile;
             fixed4 detail_1 = tex2D(_MaskR_DetailMap, uv_d1);
             fixed3 maskRColor = (1-maps.r)*_MaskR_Color_1 + maps.r*_MaskR_Color_2;
             fixed3 c1 = maskRColor * (1-detail_1.a) + _MaskR_Color_Detail * detail_1.rgb * detail_1.a;
 
-            float2 uv_d2 = uv_main * _MaskG_Tile;
+            float2 uv_d2 = IN.uv2_Base_DetailMap * _MaskG_Tile;
             fixed4 detail_2 = tex2D(_MaskG_DetailMap, uv_d2);
             fixed3 maskGColor = (1-maps.r)*_MaskG_Color_1 + maps.r*_MaskG_Color_2;
             fixed3 c2 = maskGColor * (1-detail_2.a) + _MaskG_Color_Detail * detail_2.rgb * detail_2.a;
 
-            float2 uv_d3 = uv_main * _MaskB_Tile;
+            float2 uv_d3 = IN.uv2_Base_DetailMap * _MaskB_Tile;
             fixed4 detail_3 = tex2D(_MaskB_DetailMap, uv_d3);
             fixed3 maskBColor = (1-maps.r)*_MaskB_Color_1 + maps.r*_MaskB_Color_2;
             fixed3 c3 = maskBColor * (1-detail_3.a) + _MaskB_Color_Detail * detail_3.rgb * detail_3.a;
