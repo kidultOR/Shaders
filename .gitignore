@@ -34,3 +34,4 @@ UnityVS.meta
 build/
 .vs/
 .svn
+.idea
